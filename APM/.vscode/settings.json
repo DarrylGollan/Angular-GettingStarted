@@ -1,4 +1,6 @@
 {
   "files.autoSave": "afterDelay",
-  "html.format.wrapAttributes": "force-aligned"
+  "html.format.wrapAttributes": "force-aligned",
+  "editor.hover.delay": 3000,
+  "files.insertFinalNewline": true
 }
