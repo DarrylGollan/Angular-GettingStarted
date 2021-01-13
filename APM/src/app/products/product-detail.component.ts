@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IProduct } from './product';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ProductService } from './product.service';
 
 @Component({
   //Don't need this because we're not going to nest the
@@ -15,7 +16,8 @@ export class ProductDetailComponent implements OnInit {
   product: IProduct;
 
   constructor(private route: ActivatedRoute,
-              private router: Router) { }
+              private router: Router,
+              private productService: ProductService) { }
 
   ngOnInit(): void {
     let id = +this.route.snapshot.paramMap.get('id');//+ converts the parameter string 'id' to numeric
@@ -31,7 +33,7 @@ export class ProductDetailComponent implements OnInit {
       'imageUrl': 'assets/images/leaf_rake.png'
     }
   }
-
+  
   onBack(): void {
     this.router.navigate(['/products']);
   }
